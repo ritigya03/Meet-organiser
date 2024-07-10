@@ -1,6 +1,6 @@
 
 import React, { createContext, useState, useEffect } from 'react';
-import firebaseApp from './firebaseConfig'; // Import your Firebase app instance
+import firebaseApp from './firebaseConfig'; 
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore/lite';
 
 export const SavedMeetingsContext = createContext();
@@ -10,7 +10,7 @@ export const SavedMeetingsProvider = ({ children }) => {
   const [savedMeetings, setSavedMeetings] = useState(initialMeetings);
 
   const getDeletedMeetingsFromFirebase = async () => {
-    const db = getFirestore(firebaseApp); // Use your Firebase app instance here
+    const db = getFirestore(firebaseApp); 
     const deletedMeetingsRef = collection(db, 'meetings');
     const q = query(deletedMeetingsRef, where('isDeleted', '==', true));
     const querySnapshot = await getDocs(q);
@@ -34,7 +34,7 @@ export const SavedMeetingsProvider = ({ children }) => {
     };
 
     syncSavedMeetings();
-  }, []); // Empty dependency array to run only once on component mount
+  }, []);
 
   const addMeeting = (meeting) => {
     setSavedMeetings((prevMeetings) => {

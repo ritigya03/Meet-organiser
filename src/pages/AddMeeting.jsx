@@ -45,16 +45,22 @@ function AddMeeting() {
                         <h1 className="text-4xl font-black text-center">Add new meeting</h1>
 
                         <div className="w-full mt-6">
-                            <input ref={titleInput} type="text" placeholder="Meeting Title" className="w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder-text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
+                        <input 
+                            ref={titleInput} 
+                            type="text" 
+                            placeholder="Meeting Title" 
+                            className={`w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder:text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 ${theme === 'light' ? 'black' : 'black'}`} 
+                        />
+                        </div>
+
+                        <div className="w-full mt-6">
+                            <input ref={dateInput} type="datetime-local" placeholder="Meeting Date" className={`w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder:text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 ${theme === 'light' ? 'black' : 'black'}`}  />
                         </div>
                         <div className="w-full mt-6">
-                            <input ref={dateInput} type="datetime-local" placeholder="Meeting Date" className="w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder-text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
+                            <input ref={typeInput} type="text" placeholder="Topic (e.g., Dev, Operations, Marketing...)" className={`w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder:text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 ${theme === 'light' ? 'black' : 'black'}`}  />
                         </div>
                         <div className="w-full mt-6">
-                            <input ref={typeInput} type="text" placeholder="Topic (e.g., Dev, Operations, Marketing...)" className="w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder-text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
-                        </div>
-                        <div className="w-full mt-6">
-                            <input ref={descInput} type="text" placeholder="Description" className="w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder-text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50" />
+                            <input ref={descInput} type="text" placeholder="Description" className={`w-full h-10 px-3 py-2 text-sm bg-white border rounded-lg border-neutral-300 ring-offset-background placeholder:text-black focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 ${theme === 'light' ? 'black' : 'black'}`}  />
                         </div>
                         <div className="flex justify-center">
                             <button onClick={addMeetingHandler} className={theme === 'light' ? "bg-black px-6 py-3 mt-5 rounded-lg flex gap-2 items-center text-white" : "bg-pink-200 px-6 py-3 mt-5 rounded-lg flex gap-2 items-center text-black"}>
