@@ -12,7 +12,7 @@ function Index() {
     const [filter, setFilter] = useState('');
     
     useEffect(() => {
-        fetch('https://meet-app-dbc6c-default-rtdb.firebaseio.com/meetings.json')
+        fetch('https://meet-organiser-default-rtdb.firebaseio.com/meetings.json')
         .then(response => response.json())
         .then(data => {
             const tempMeetings = Object.keys(data).map(key => ({
