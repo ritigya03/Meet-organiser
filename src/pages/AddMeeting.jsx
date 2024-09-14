@@ -23,7 +23,7 @@ function AddMeeting() {
             type: typeInput.current.value
         };
 
-        fetch('https://meet-organiser-default-rtdb.firebaseio.com/meetings.json', {
+        fetch('https://meetapp01-f4fde-default-rtdb.firebaseio.com/meetings.json', {
             method: 'post',
             body: JSON.stringify(newMeetingData)
         }).then(() => {
